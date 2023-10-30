@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useState } from "react";
@@ -64,9 +65,6 @@ const Signup = () => {
   return (
     <>
       <div className="flex justify-center items-center bg-[#ebeaf8] h-[710px]">
-        <div className="w-1/4 h-[670px] bg-white mb-4  flex justify-center items-center text-white text-center shadow-md rounded">
-          <img src="/signup.jpg" alt="" />
-        </div>
         <div className="card bg-white shadow-md rounded px-10 pt-8 pb-8 mb-4 w-1/4">
           <form onSubmit={handleSubmit(onSubmit)} className="">
             <div className="form-control">
@@ -205,6 +203,15 @@ const Signup = () => {
               </span>
             </Link>
           </p>
+        </div>
+        <div className="w-1/4 h-[670px] bg-white mb-4  flex justify-center items-center text-white text-center shadow-md rounded">
+          <motion.img
+            src="/signup.jpg"
+            alt=""
+            animate={{ y: 0, opacity: 1, scale: 1 }}
+            initial={{ y: -300, opacity: 0, scale: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+          />
         </div>
       </div>
     </>

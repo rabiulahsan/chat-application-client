@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { motion } from "framer-motion";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAuth from "../../hooks/useAuth";
@@ -37,10 +38,22 @@ const Login = () => {
 
   return (
     <>
-      <div className="flex justify-center items-center bg-[#ebeaf8] h-[710px] relative">
-        <div className="w-1/4 h-[460px] bg-white mb-4  flex justify-center items-center text-white text-center shadow-md rounded">
-          <Player className="w-[80%]" autoplay loop src="/login.json"></Player>
-        </div>
+      <div className="flex justify-center items-center bg-[#ebeaf8] h-[710px] ">
+        <motion.div className=" w-1/4 h-[460px] bg-white mb-4  flex justify-center items-center text-white text-center shadow-md rounded">
+          <motion.span
+            className=""
+            animate={{ y: 0, opacity: 1, scale: 1 }}
+            initial={{ y: -300, opacity: 0, scale: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+          >
+            <Player
+              className="w-[80%]"
+              autoplay
+              loop
+              src="/login.json"
+            ></Player>
+          </motion.span>
+        </motion.div>
         <div className="bg-white shadow-md rounded px-10 pt-8 pb-8 mb-4 w-1/4">
           <form onSubmit={handleSubmit(onsubmit)}>
             <div className="form-control mb-6">
