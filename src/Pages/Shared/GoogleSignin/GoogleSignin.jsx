@@ -18,6 +18,7 @@ const GoogleSignin = () => {
         .then((result) => {
           const loggedInUser = result.user;
           console.log(loggedInUser);
+          navigate(from, { replace: true }); //posting er kaj sesh hole ei line delet hobe
           const saveUser = {
             name: loggedInUser.displayName,
             email: loggedInUser.email,

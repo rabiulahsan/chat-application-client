@@ -1,5 +1,11 @@
+import Signup from "../../Pages/Signup/Signup";
+
 const SigninLayout = () => {
-  return <div>this is a sign in page</div>;
+  return (
+    <div>
+      <Signup></Signup>
+    </div>
+  );
 };
 
 export default SigninLayout;
