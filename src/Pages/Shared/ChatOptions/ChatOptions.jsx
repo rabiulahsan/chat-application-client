@@ -14,7 +14,7 @@ const ChatOptions = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <div className="bg-white p-[5%] shadow-md rounded">
+    <div className="bg-white p-[5%] h-[100%] shadow-md rounded">
       {/* users details  */}
       <div className="flex items-center justify-between">
         <div className="flex gap-x-5 items-center">
@@ -23,7 +23,9 @@ const ChatOptions = () => {
             alt={user?.displayName}
             className="w-[50px]"
           />
-          <p className="font-semibold text-xl">{user?.displayName}</p>
+          <p className="font-bold text-xl text-violet-600">
+            {user?.displayName}
+          </p>
         </div>
         <div className="">
           <span

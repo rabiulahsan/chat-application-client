@@ -11,7 +11,7 @@ const SingleChatOptions = ({ user }) => {
       <img
         src={user?.image}
         alt={user?.name}
-        className="w-[40px] rounded-[1000px]"
+        className="w-[45px] rounded-[1000px]"
       />
 
       <div className="">
