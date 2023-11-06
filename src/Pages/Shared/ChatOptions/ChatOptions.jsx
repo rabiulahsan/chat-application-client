@@ -1,8 +1,11 @@
 import { AiOutlineLogout } from "react-icons/ai";
 import useAuth from "../../../hooks/useAuth";
+import useFilteredUsesrs from "../../../hooks/useFilteredUsesrs";
+import SingleChatOptions from "./SingleChatOptions";
 
 const ChatOptions = () => {
   const { user, logOut } = useAuth();
+  const [filteredUsers] = useFilteredUsesrs();
 
   //logout
   const handleLogout = () => {
@@ -35,11 +38,15 @@ const ChatOptions = () => {
 
       {/* users all chats  */}
       <p className="font-semibold text-lg text-gray-500 text-center mb-5">
-        All Chats
+        All Chats {filteredUsers.length}
       </p>
 
       {/* all users  */}
-      <div className=""></div>
+      <div className="">
+        {filteredUsers.map((user) => (
+          <SingleChatOptions key={user._id} user={user}></SingleChatOptions>
+        ))}
+      </div>
     </div>
   );
 };
