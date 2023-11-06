@@ -22,6 +22,7 @@ const GoogleSignin = () => {
             name: loggedInUser.displayName,
             email: loggedInUser.email,
             role: "user",
+            image: loggedInUser.photoURL,
           };
 
           // post the users data to backend

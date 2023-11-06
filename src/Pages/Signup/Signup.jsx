@@ -29,6 +29,7 @@ const Signup = () => {
               name: data.name,
               email: data.email,
               role: "user",
+              image: data.photoURL,
             };
 
             // it is for posted data details to databse
