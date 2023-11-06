@@ -11,7 +11,8 @@ const ChatOptions = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <div className="bg-white p-[5%] shadow-lg rounded">
+    <div className="bg-white p-[5%] shadow-md rounded">
+      {/* users details  */}
       <div className="flex items-center justify-between">
         <div className="flex gap-x-5 items-center">
           <img
@@ -30,6 +31,15 @@ const ChatOptions = () => {
           </span>
         </div>
       </div>
+      <hr className="my-5" />
+
+      {/* users all chats  */}
+      <p className="font-semibold text-lg text-gray-500 text-center mb-5">
+        All Chats
+      </p>
+
+      {/* all users  */}
+      <div className=""></div>
     </div>
   );
 };
