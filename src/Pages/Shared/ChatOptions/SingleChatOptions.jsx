@@ -6,6 +6,8 @@ const SingleChatOptions = ({ user }) => {
 
   const currentTime = dayjs().format("HH:mm"); // Format the current time
 
+  const timeFormat = dayjs().format("A");
+
   return (
     <div className="px-3 py-4 flex items-center w-full gap-x-3 rounded-sm hover:bg-violet-100">
       <img
@@ -21,7 +23,9 @@ const SingleChatOptions = ({ user }) => {
             <p className="font-semibold text-base">{user?.name}</p>
           </div>
           <div className="">
-            <p className="text-xs text-gray-500 ">{currentTime}</p>
+            <p className="text-xs text-gray-500 ">
+              {currentTime} {timeFormat}
+            </p>
           </div>
         </div>
 

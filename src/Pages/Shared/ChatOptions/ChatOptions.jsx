@@ -14,7 +14,7 @@ const ChatOptions = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <div className="bg-white p-[5%] h-[100%] shadow-md rounded">
+    <div className="bg-white p-[5%] h-[100%] overflow-y-auto shadow-md rounded">
       {/* users details  */}
       <div className="flex items-center justify-between">
         <div className="flex gap-x-5 items-center">
