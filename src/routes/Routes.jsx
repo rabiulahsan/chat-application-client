@@ -4,6 +4,7 @@ import LoginLayout from "../Layout/LoginLayout/LoginLayout";
 import MainLayout from "../Layout/MainLayout/MainLayout";
 import Home from "../Pages/Home/Home/Home";
 import { createBrowserRouter } from "react-router-dom";
+import SingleChats from "../Pages/Shared/SingleChats/SingleChats";
 
 export const router = createBrowserRouter([
   {
@@ -14,6 +15,11 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "/:id",
+        element: <SingleChats></SingleChats>,
+        loader: ({ params }) => fetch(`http://localhost:5000/${params.id}`),
       },
     ],
   },
