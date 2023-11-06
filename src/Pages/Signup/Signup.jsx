@@ -31,28 +31,28 @@ const Signup = () => {
               role: "user",
             };
 
-            //it is for posted data details to databse
-            // fetch("https://skill-builder-server.vercel.app/users", {
-            //   method: "POST",
-            //   headers: {
-            //     "content-type": "application/json",
-            //   },
-            //   body: JSON.stringify(saveUser),
-            // })
-            //   .then((res) => res.json())
-            //   .then((data) => {
-            //     if (data.insertedId) {
-            //       reset();
-            //       Swal.fire({
-            //         position: "top-end",
-            //         icon: "success",
-            //         title: "User created successfully.",
-            //         showConfirmButton: false,
-            //         timer: 1500,
-            //       });
-            //       navigate("/");
-            //     }
-            //   });
+            // it is for posted data details to databse
+            fetch("http://localhost:5000/users", {
+              method: "POST",
+              headers: {
+                "content-type": "application/json",
+              },
+              body: JSON.stringify(saveUser),
+            })
+              .then((res) => res.json())
+              .then((data) => {
+                if (data.insertedId) {
+                  reset();
+                  Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "User created successfully.",
+                    showConfirmButton: false,
+                    timer: 1500,
+                  });
+                  navigate("/");
+                }
+              });
           })
           .catch((error) => console.log(error));
       });
