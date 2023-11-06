@@ -8,28 +8,29 @@ const Home = () => {
   //logout
   const handleLogout = () => {
     logOut()
-      .then((data) => {
-        Navigate("/login");
-      })
+      .then()
       .catch((error) => console.log(error));
-    Navigate("/login");
   };
 
   return (
     <div>
       This is home page of {user?.displayName}
-      <button
-        onClick={handleLogout}
-        className="bg-blue-600 font-semibold text-lg text-white py-2 px-6 mb-5 rounded cursor-pointer hover:bg-blue-800 duration-500"
-      >
-        Log Out
-      </button>
-      <Link
-        to="/login"
-        className="bg-blue-600 font-semibold text-lg text-white py-2 px-6 mb-5 rounded cursor-pointer hover:bg-blue-800 duration-500"
-      >
-        login
-      </Link>
+      {user ? (
+        <Link
+          onClick={handleLogout}
+          to="/login"
+          className="bg-blue-600 font-semibold text-lg text-white py-2 px-6 mb-5 rounded cursor-pointer hover:bg-blue-800 duration-500"
+        >
+          Log Out
+        </Link>
+      ) : (
+        <Link
+          to="/login"
+          className="bg-blue-600 font-semibold text-lg text-white py-2 px-6 mb-5 rounded cursor-pointer hover:bg-blue-800 duration-500"
+        >
+          login
+        </Link>
+      )}
     </div>
   );
 };
