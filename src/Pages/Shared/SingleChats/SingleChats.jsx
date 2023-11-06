@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import ChatHeader from "./ChatHeader";
 
 const SingleChats = () => {
   const [user, setUser] = useState([]);
@@ -17,7 +18,11 @@ const SingleChats = () => {
       });
   }, [id]);
 
-  return <div className="bg-violet-100"></div>;
+  return (
+    <div className="bg-violet-100">
+      <ChatHeader user={user}></ChatHeader>
+    </div>
+  );
 };
 
 export default SingleChats;
