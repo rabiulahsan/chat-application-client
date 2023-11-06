@@ -1,36 +1,18 @@
 /* eslint-disable no-unused-vars */
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
+import ChatOptions from "../../Shared/ChatOptions/ChatOptions";
+import SingleChats from "../../Shared/SingleChats/SingleChats";
 
 const Home = () => {
-  const { user, logOut } = useAuth();
-
-  //logout
-  const handleLogout = () => {
-    logOut()
-      .then()
-      .catch((error) => console.log(error));
-  };
-
   return (
-    <div>
-      This is home page of {user?.displayName}
-      {user ? (
-        <Link
-          onClick={handleLogout}
-          to="/login"
-          className="bg-blue-600 font-semibold text-lg text-white py-2 px-6 mb-5 rounded cursor-pointer hover:bg-blue-800 duration-500"
-        >
-          Log Out
-        </Link>
-      ) : (
-        <Link
-          to="/login"
-          className="bg-blue-600 font-semibold text-lg text-white py-2 px-6 mb-5 rounded cursor-pointer hover:bg-blue-800 duration-500"
-        >
-          login
-        </Link>
-      )}
+    <div className="flex w-full h-[710px] bg-violet-50 py-[3%] px-[5%] gap-x-5">
+      <div className="w-1/4 ">
+        <ChatOptions></ChatOptions>
+      </div>
+      <div className="w-3/4">
+        <SingleChats></SingleChats>
+      </div>
     </div>
   );
 };
