@@ -38,7 +38,7 @@ const ChatOptions = () => {
 
       {/* users all chats  */}
       <p className="font-semibold text-lg text-gray-500 text-center mb-5">
-        All Chats {filteredUsers.length}
+        All Chats
       </p>
 
       {/* all users  */}
