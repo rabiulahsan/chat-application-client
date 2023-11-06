@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 /* eslint-disable react/prop-types */
 const SingleChatOptions = ({ user }) => {
-  console.log(user);
+  // console.log(user);
 
   const currentTime = dayjs().format("HH:mm"); // Format the current time
 
